@@ -1,0 +1,578 @@
+/* Variables for easy theme customization */
+:root {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --secondary-text-color: #b0b0b0;
+    --accent-color-orange: #ff7f50;
+    --accent-color-purple: #8a2be2;
+    --button-bg-color-primary: #ffffff;
+    --button-text-color-primary: #1a1a1a;
+    --button-border-color-secondary: #ffffff;
+    --card-background: #252525;
+    --border-color: #333333;
+    --link-color: #ffffff;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll due to potential overflow */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color-orange);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Header */
+header {
+    background-color: var(--background-color);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.mobile-site-title{
+            display: inline-block;
+        /* float: left; */
+        color: #fff;
+        word-spacing: 5px;
+        font-size: 28px;
+        font-weight: 400;
+        font-family: 'Montserrat', Helvetica, sans-serif;
+        margin: 0;
+        line-height: 50px;
+}
+.mobile-site-title span{
+    background: linear-gradient(135deg, var(--accent-color-orange) 0%, var(--accent-color-purple) 100%);
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+}
+
+nav ul li a {
+    color: var(--secondary-text-color);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: var(--text-color);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    min-height: 80vh; /* Make it fill more of the viewport */
+    justify-content: center;
+}
+
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-color-orange) 0%, var(--accent-color-purple) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+}
+
+#avatar-center {
+display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar img {
+    width: 120px; /* Adjust size of the actual avatar image within the circle */
+    height: 120px;
+    object-fit: cover; /* Ensure the image covers the area, might crop */
+    border-radius: 50%; /* If your avatar image isn't already round */
+}
+
+.hero-title {
+    font-size: 56px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+/* #laravel-logo{ */
+/* height: 125px;
+margin-bottom: 30px;
+width: 125px;
+} */
+.hero-title .highlight {
+    background: linear-gradient(90deg, var(--accent-color-orange), var(--accent-color-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+    color: var(--secondary-text-color);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.button {
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.button.primary {
+    background-color: var(--button-bg-color-primary);
+    color: var(--button-text-color-primary);
+    border: 2px solid var(--button-bg-color-primary);
+}
+
+.button.primary:hover {
+    background-color: transparent;
+    color: var(--button-bg-color-primary);
+}
+
+.button.secondary {
+     background: linear-gradient(135deg, var(--accent-color-orange) 0%, var(--accent-color-purple) 100%);
+     color: var(--button-text-color-primary); /* Use primary text color for contrast */
+    border: 2px solid var(--button-border-color-secondary);
+}
+
+.button.secondary:hover {
+    background-color: var(--button-bg-color-primary);
+    color: var(--button-text-color-primary);
+}
+
+/* Experience With Section */
+.experience-with-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--card-background); /* Slightly different background for distinction */
+}
+
+.experience-with-section h2 {
+    font-size: 20px;
+    color: var(--secondary-text-color);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.tech-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.tech-logos img {
+    width: 60px; /* Adjust size of logos */
+    height: 60px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(150%); /* Make logos look monochrome/light */
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tech-logos img:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title-wrapper {
+    margin-bottom: 50px;
+}
+
+.section-title-wrapper h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-title-wrapper p {
+    font-size: 18px;
+    color: var(--secondary-text-color);
+}
+
+.project-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 380px; /* Max width for individual cards */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card .card-content {
+    padding: 25px;
+    position: relative;
+}
+
+.project-card h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.project-card .tag {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.project-card .view-project-link {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    font-size: 24px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.project-card .view-project-link:hover {
+    background-color: var(--accent-color-orange);
+}
+
+/* Experience Section */
+.experience-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.experience-section h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.experience-items {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.experience-item {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    text-align: left;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.experience-item .company-logo {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background-color: var(--background-color); /* Darker background for logo circle */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: var(--text-color); /* Icon color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.experience-item .experience-details {
+    flex-grow: 1;
+}
+
+.experience-item h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.experience-item .date {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    margin-bottom: 10px;
+}
+
+.experience-item .description {
+    font-size: 16px;
+    color: var(--secondary-text-color);
+}
+
+/* Contact Section (Footer) */
+.contact-section {
+    background-color: var(--background-color);
+    padding: 80px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.contact-intro {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: var(--secondary-text-color);
+}
+
+.email-contact a {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.email-contact a:hover {
+    color: var(--accent-color-orange);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links a {
+    font-size: 28px;
+    color: var(--secondary-text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--text-color);
+    transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .project-card {
+        max-width: 45%; /* Allow two cards per row on wider tablets */
+    }
+
+    .experience-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .experience-item .company-logo {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .hero-section {
+        padding: 60px 20px;
+    }
+
+    .hero-title {
+        font-size: 38px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        max-width: 90%;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        background: #fff;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px; /* Limit button width on smaller screens */
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .tech-logos {
+        gap: 30px;
+    }
+
+    .projects-section, .experience-section, .contact-section {
+        padding: 60px 0;
+    }
+
+    .project-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        max-width: 90%; /* Full width on small mobiles */
+    }
+
+    .section-title-wrapper h2, .experience-section h2, .contact-section h2 {
+        font-size: 30px;
+    }
+
+    .experience-item {
+        padding: 20px;
+    }
+    .experience-item h3 {
+        font-size: 20px;
+    }
+    .experience-item .description {
+        font-size: 15px;
+    }
+
+    .contact-intro {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .email-contact a {
+        font-size: 18px;
+    }
+
+    .social-links {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .avatar {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 30px;
+    }
+
+    .avatar img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .experience-with-section h2 {
+        font-size: 18px;
+    }
+
+    .tech-logos img {
+        width: 50px;
+        height: 50px;
+    }
+}
